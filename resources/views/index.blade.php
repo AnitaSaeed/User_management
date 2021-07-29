@@ -23,6 +23,16 @@
                         <td>{{$user->national_number}}</td>
                         <td>{{$user->phone}}</td>
                         <td>{{$user->email}}</td>
+                        <td>
+                            <form  action="{{route('user.destroy',$user['id'])}}" method="post">
+                                @csrf
+                                <input name="_method" type="hidden" value="DELETE">
+                                <button type="submit" class="btn btn-danger" onclick="confirm('آیا مطمئن هستید؟')"> حذف</button>
+                            </form>
+                        </td>
+                        <td>
+                            <a   type="button" class="btn btn-success"> ویرایش</a>
+                        </td>
 
 
                     </tr>
