@@ -78,7 +78,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user= User::find($id);
+        return view('update', compact('user'));
     }
 
     /**
@@ -90,7 +91,25 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user= User::find($id);
+        $request->validate([
+            'name' => 'required',
+            'last_name' => 'required',
+            'national_number' => 'required',
+            'phone' => 'required',
+            'national_number' => 'digits:10',
+            'email'=> 'required',
+            'password'=>'required'
+        ]);
+        $user->update([
+            'name'=> $request['name'],
+            'last_name'=> $request['last_name'],
+            'national_number'=> $request['national_number'],
+            'phone'=>$request['phone'],
+            'email'=>$request['email'],
+            'password'=>Hash::make($request->password)
+        ]);
+        return redirect('/user');
     }
 
     /**

@@ -31,7 +31,7 @@
                             </form>
                         </td>
                         <td>
-                            <a   type="button" class="btn btn-success"> ویرایش</a>
+                            <a  href="{{route('user.edit' ,$user)}}" type="button" class="btn btn-success"> ویرایش</a>
                         </td>
 
 
