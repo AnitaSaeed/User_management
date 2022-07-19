@@ -17,3 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('user',\App\Http\Controllers\UserController::class);
+
+//Route::patch('/user1',[\App\Http\Controllers\UserController::class,'saveChange']);
