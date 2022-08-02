@@ -15,3 +15,9 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+mix.options({
+    hmrOptions:{
+        host: '127.0.0.1',
+        port: 7000,
+    }
+})
